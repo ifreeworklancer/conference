@@ -1,0 +1,20 @@
+#app-header {
+    @extend %pos;
+    bottom: auto;
+    padding-top: 35px;
+    z-index: 99;
+
+    .btn {
+        padding: 10px 20px;
+    }
+}
+
+.logo {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    img {
+        width: auto;
+    }
+}

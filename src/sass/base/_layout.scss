@@ -1,0 +1,54 @@
+.section-title {
+    position: relative;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+    color: $dark;
+    z-index: 5;
+
+    &::before {
+        content: '';
+        @extend %pos;
+        top: auto;
+        background: $primary;
+        height: 1px;
+    }
+
+    &--simple {
+        padding-bottom: 0;
+
+        &::before {
+            display: none;
+        }
+    }
+
+    &--left {
+
+        &::before {
+            left: -1500px;
+        }
+    }
+
+    &--right {
+
+        &::before {
+            right: -1500px;
+        }
+    }
+}
+
+.section-subtitle {
+    position: absolute;
+    text-transform: uppercase;
+    color: $dark;
+    opacity: .15;
+    white-space: nowrap;
+    z-index: 10;
+
+    @media (max-width: map_get($grid-breakpoints, sm)) {
+        display: none;
+    }
+
+    @media (max-width: map_get($grid-breakpoints, xl)) {
+        white-space: normal;
+    }
+}
