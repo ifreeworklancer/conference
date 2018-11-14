@@ -107,14 +107,13 @@ $speakers = [
 		[   
             'image' => 'images/speakers/speakers-item-3.jpg',
             'name' => 'Lorem Ipsum',
-			'position' => 'Perspiciatis unde omnis iste natus perspiciatis 
-            unde omnis iste natus error ',
+			'position' => 'Perspiciatis unde omnis iste natus perspiciatis unde omnis iste natus error ',
 		],
 		[   
             'image' => 'images/speakers/speakers-item-3.jpg',
             'name' => 'Lorem Ipsum',
 			'position' => 'Sed ut perspiciatis unde omnis iste natus error',
-		],
+		]
 	],
 ];
 $singup = [

@@ -4,7 +4,7 @@ require_once('store.php');
 
 require_once('views/base/header.php');
 
-$sections = ['intro' , 'for-who' , 'program'];
+$sections = ['intro' , 'for-who' , 'program' , 'speakers'];
 
 foreach ($sections as $section) {
 	include(__DIR__ . '/views/sections/' . $section . '.php');

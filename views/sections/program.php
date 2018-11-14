@@ -35,22 +35,24 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-4 pb-2">
-            <div class="col-sm-7">
-                <div class="program-btn">
-                    <a href="#" class="btn btn-primary">Записаться</a>
-                </div>
-                <div class="decor-line"></div>
-            </div>
-            <div class="col-sm-5">
-                <div class="program-footer d-flex align-items-center">
-                    <div class="program-footer__text">
-                        Запишись и получи 
+        <div class="program-footer">
+            <div class="row align-items-center">
+                <div class="col-sm-7">
+                    <div class="program-btn">
+                        <a href="#" class="btn btn-primary">Записаться</a>
                     </div>
-                    <div class="program-footer__present">
-                        Подарок
-                    </div>
+                    <div class="decor-line"></div>
                 </div>
+                <div class="col-sm-5 mt-3 mt-sm-0">
+                    <div class="d-flex align-items-center">
+                        <div class="program-footer__text mr-2 mr-xl-3 text-white">
+                            Запишись и получи 
+                        </div>
+                        <h3 class="program-footer__present text-white bg-primary mb-0 text-uppercase">
+                            Подарок
+                        </h3>
+                    </div>
+                </div>  
             </div>
         </div>
     </div>
