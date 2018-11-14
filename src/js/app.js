@@ -1,8 +1,7 @@
 import jquery from 'jquery';
-import Flickity from 'flickity';
+import ScrollReveal from 'scrollreveal'
 
 window.jQuery = window.$ = jquery;
-import 'flickity/dist/flickity.css';
 
 (function () {
 
@@ -12,16 +11,44 @@ import 'flickity/dist/flickity.css';
   $('.burger-menu').click(function () {
     var menu = $('.menu');
     $(this).toggleClass('active');
-    if (menu.is(':visible')) {
-      menu.slideUp();
+    menu.toggleClass('active');
+  });
+
+  /**
+   * Fix menu
+   */
+  $(window).on('scroll', function() {
+    if($(this).scrollTop() > $('#intro').height()) {
+      $('#app-header').addClass('is-fixed');
     } else {
-      menu.slideDown();
+      $('#app-header').removeClass('is-fixed');
+    }
+  })
+
+  /**
+   * Scroll
+   */
+  $(".scroll-link").on("click", function (event) {
+    event.preventDefault();
+
+    var id = $(this).attr('href');
+
+    if (id.length > 1) {
+
+      var top = ($(id).offset().top - $('#app-header').height());
+
+      $('body,html').animate({
+        scrollTop: top
+      }, 1500);
+
+      $('.burger-menu').removeClass('active');
+      $('.menu').removeClass('active');
     }
   });
 
 
   /**
-   * Form-label
+   * Form
    */
 
   $('.form-control').on('focus', function () {
@@ -36,6 +63,10 @@ import 'flickity/dist/flickity.css';
     }
   });
 
+  $('form').on('submit', function() {
+    $('input').val("");
+  })
+
   /**
    * Tabs
    */
@@ -44,64 +75,83 @@ import 'flickity/dist/flickity.css';
   $('.program-tabs-body-item').eq(0).addClass('active');
   var programHeight = $('.program-tabs-body-item').height();
   $('.program-tabs-body').css('padding-top', `${programHeight}px`);
-  
+
   console.log($('.program-tabs-body-item').height());
-  
+
   $('.program-tabs-header-list').on('click', 'li:not(.active)', function () {
     $(this)
       .addClass('active').siblings().removeClass('active')
       .closest('#program').find('.program-tabs-body-item').removeClass('active').eq($(this).index()).addClass('active');
-      $('.program-tabs-body').css('padding-top',  $('.program-tabs-body-item').eq($(this).index()).height() + 'px');
-  });
-
-
-  /**
-   * Scroll
-   */
-  $(".scroll-link").on("click", function (event) {
-    event.preventDefault();
-
-    var id = $(this).attr('href');
-
-    if (id.length > 1) {
-
-      var top = $(id).offset().top;
-
-      $('body,html').animate({
-        scrollTop: top
-      }, 1500);
-    }
+    $('.program-tabs-body').css('padding-top', $('.program-tabs-body-item').eq($(this).index()).height() + 'px');
   });
 
   /**
-   * Slider
+   * Footer secondary
    */
-  // if ($('.header-banner-slider')) {
+  $('.app-footer-secondary').css('margin-top', '-' + $('.app-footer-secondary').innerHeight() + 'px');
 
-  //   var elem1 = document.querySelector('.header-banner-slider');
-  //   if (elem1) {
+  /**
+     * Animate scroll
+     */
+    ScrollReveal().reveal('.intro-item', {
+      origin: 'left',
+      delay: 400,
+      distance: '200px',
+  });
+  ScrollReveal().reveal('.intro-description', {
+      origin: 'left',
+      delay: 400,
+      distance: '200px',
+  });
+  ScrollReveal().reveal('.for-who-img', {
+      origin: 'left',
+      delay: 400,
+      distance: '200px',
+  });
+  ScrollReveal().reveal('.singup-card', {
+      origin: 'right',
+      delay: 400,
+      distance: '200px',
+  });
+  ScrollReveal().reveal('.for-who-item', {
+      origin: 'right',
+      delay: 400,
+      distance: '200px',
+  });
+  ScrollReveal().reveal('.speaker-card', {
+      origin: 'bottom',
+      delay: 500,
+      distance: '400px',
+  });
+  ScrollReveal().reveal('.contacts-item', {
+      origin: 'right',
+      delay: 500,
+      distance: '200px',
+  });
 
-  //     const flkty1 = new Flickity(elem1, {
-  //       prevNextButtons: false,
-  //       cellAlign: 'left',
-  //       cellSelector: '.header-banner-slider-item',
-  //       contain: true,
-  //       draggable: false,
-  //     });
+  /**
+   * Map
+   */
+var element = document.getElementById('map');
 
+var map = L.map(element);
 
-  //     var prevArrowHeader = document.querySelector('.slider-nav-arrow-prev--header-banner');
+var logoIcon = L.icon({
+  iconUrl: '../images/icon/logo/marker-icon.png',
 
-  //     prevArrowHeader.addEventListener('click', function () {
-  //       flkty1.previous(false, false);
-  //     });
+  iconSize: [45, 45], 
+  iconAnchor:   [22, 94], 
+  popupAnchor:  [-3, -76] 
+});
 
-  //     var nextArrowHeader = document.querySelector('.slider-nav-arrow-next--header-banner');
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
 
-  //     nextArrowHeader.addEventListener('click', function () {
-  //       flkty1.next(false, false);
-  //     });
-  //   }
-  // }
+var target = L.latLng('50.44937', '30.52577');
+
+map.setView(target, 14);
+
+L.marker(target, {icon: logoIcon}).addTo(map);
 
 })(jQuery)

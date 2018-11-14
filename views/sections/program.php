@@ -39,7 +39,7 @@
             <div class="row align-items-center">
                 <div class="col-sm-7">
                     <div class="program-btn">
-                        <a href="#" class="btn btn-primary">Записаться</a>
+                        <a href="#singup" class="btn btn-primary scroll-link">Записаться</a>
                     </div>
                     <div class="decor-line"></div>
                 </div>

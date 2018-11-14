@@ -1,6 +1,6 @@
 </main>
 
-<footer id="app-footer">
+<footer id="app-footer" class="app-footer-secondary">
     <div class="container">
         <div class="row justify-content-between align-items-center">
             <div class="col-sm-3 col-lg-2 d-flex justify-content-center justify-content-sm-start">

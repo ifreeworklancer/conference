@@ -39,7 +39,7 @@
             <ul class="menu-list list-unstyled">
                 <?php
 					foreach ($nav as $key => $value) {
-					    echo '<li><a href="#' . $key . '"' . 'class="scroll-link">' . $value . '</a></li>';
+					    echo '<li><a href="/#' . $key . '">' . $value . '</a></li>';
 					}
 				?>
             </ul>

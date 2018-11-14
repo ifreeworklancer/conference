@@ -90,27 +90,27 @@ $speakers = [
 	'title' => 'Наши спикеры',
 	'items' =>  [
 		[   
-            'image' => 'images/speakers/speakers-item-1.jpg',
+            'image' => '../../images/content/speakers/speakers-item-1.jpg',
             'name' => 'Елена Самсонава',
 			'position' => 'Косметолог международной ассоциации ',
 		],
 		[   
-            'image' => 'images/speakers/speakers-item-2.jpg',
+            'image' => '../../images/content/speakers/speakers-item-2.jpg',
             'name' => 'Валерия Николайченко-Белик',
 			'position' => 'Косметолог международной ассоциации IALPE. Имеет высшие медицинское образование и 10-тилетний опыт.',
 		],
 		[   
-            'image' => 'images/speakers/speakers-item-3.jpg',
+            'image' => '../../images/content/speakers/speakers-item-2.jpg',
             'name' => 'Lorem Ipsum',
 			'position' => 'Sed ut perspiciatis unde omnis iste natus error ipsa quae ab illo inventore veritatis architecto ab illo inventore veritatis et quasi',
 		],
 		[   
-            'image' => 'images/speakers/speakers-item-3.jpg',
+            'image' => '../../images/content/speakers/speakers-item-1.jpg',
             'name' => 'Lorem Ipsum',
 			'position' => 'Perspiciatis unde omnis iste natus perspiciatis unde omnis iste natus error ',
 		],
 		[   
-            'image' => 'images/speakers/speakers-item-3.jpg',
+            'image' => '../../images/content/speakers/speakers-item-1.jpg',
             'name' => 'Lorem Ipsum',
 			'position' => 'Sed ut perspiciatis unde omnis iste natus error',
 		]
@@ -123,10 +123,17 @@ $singup = [
 $contacts = [
 	'title' => 'Контакты',
 	'items' => [
-		[
-			'phone' => '+380 99 777 55 99',
-			'email' => 'conference_cosmetology@gmail.com',
-			'place' => 'г.Киев, ул.Михаила Грушевского 215/2',
+		[	
+			'name' => 'phone',
+			'info' => '+380 99 777 55 99',
+		],
+		[	
+			'name' => 'email',
+			'info' => 'conference_cosmetology@gmail.com',
+		],
+		[	
+			'name' => 'place',
+			'info' => 'г.Киев, ул.Михаила Грушевского 215/2',
 		],
 	],
 ];

@@ -52,3 +52,21 @@
         white-space: normal;
     }
 }
+
+.title-shadow {
+    position: relative;
+    margin-bottom: 0;
+    padding: 35px 30px;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 21px rgba(255, 255, 255, 0.36);
+    z-index: 5;
+
+    &::before {
+        content: '';
+        @extend %pos;
+        background: $primary;
+        box-shadow: 0px 12px 24px 5px rgba(0, 0, 0, 0.32);
+        z-index: -4;
+    }
+}

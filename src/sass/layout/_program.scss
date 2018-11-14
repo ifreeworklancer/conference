@@ -2,6 +2,7 @@
     margin-top: -160px;
     padding-top: 120px;
     overflow: hidden;
+    z-index: 8;
 
     .section-subtitle {
         top: -20px;
@@ -198,7 +199,7 @@
     &::after {
         content: '';
         position: absolute;
-        top: 0;
+        top: -40px;
         left: 19px;
         bottom: 50%;
         border-left: 2px dashed #d7d7d7;

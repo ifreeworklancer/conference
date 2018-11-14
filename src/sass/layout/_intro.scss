@@ -1,13 +1,17 @@
 #intro {
-    height: 100vh;
-    max-height: 1080px;
-    background: url('../images/bg/intro-bg.jpg') 50% 50% / cover no-repeat;
     overflow: hidden;
+    height: auto;
+    padding: 250px 0 0;
+    background: url('../images/bg/intro-sm-bg.jpg') 50% 100% / cover no-repeat;
 
-    @media (max-width: map_get($grid-breakpoints, sm)) {
-        height: auto;
-        padding: 250px 0 0;
-        background: url('../images/bg/intro-sm-bg.jpg') 50% 100% / cover no-repeat;
+    @media (min-width: map_get($grid-breakpoints, sm)) {
+        background: url('../images/bg/intro-bg.jpg') 50% 50% / cover no-repeat;
+    }
+
+    @media (min-width: map_get($grid-breakpoints, lg)) {
+        padding: 0;
+        height: 100vh;
+        max-height: 1080px;
     }
 
     .section-subtitle {
@@ -49,7 +53,7 @@
     padding: 30px 0 20px;
     z-index: 5;
 
-    @media (max-width: map_get($grid-breakpoints, sm)) {
+    @media (max-width: map_get($grid-breakpoints, lg)) {
         position: relative;
         margin-top: 50px;
     }
@@ -86,5 +90,38 @@
         height: 5px;
         background: $primary;
         z-index: -4;
+    }
+}
+
+.singup-card {
+    position: relative;
+    top: auto;
+    transform: none;
+    margin: 20px auto;
+    padding: 20px 0;
+    width: 100%;
+    max-width: 380px;
+    background: $secondary;
+    border-radius: 5px;
+    z-index: 20;
+
+    @media (min-width: map_get($grid-breakpoints, lg)) {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        margin: 0;
+    }
+
+    &-header {
+
+        .title-shadow {
+            padding: 20px 35px;
+
+            &::before {
+                left: -15px;
+                right: -15px;
+            }
+        }
     }
 }
