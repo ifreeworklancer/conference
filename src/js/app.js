@@ -63,10 +63,6 @@ window.jQuery = window.$ = jquery;
     }
   });
 
-  $('form').on('submit', function() {
-    $('input').val("");
-  })
-
   /**
    * Tabs
    */
